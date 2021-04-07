@@ -1,5 +1,5 @@
 fever
-dialated pupils
+dilated pupils
 dry mouth
 inflamation
 tremor
@@ -60,7 +60,7 @@ insomnia
 dizziness
 dizziness
 high blood pressure
-dialated pupils
+dilated pupils
 rash
 rash
 insomnia
@@ -69,7 +69,7 @@ constricted pupils
 blurred vision
 high blood pressure
 low blood pressure
-dialated pupils
+dilated pupils
 high blood pressure
 tremor
 high blood pressure
@@ -90,7 +90,7 @@ dry mouth
 fever
 high blood pressure
 stiff neck
-dialated pupils
+dilated pupils
 cough
 inflamation
 low blood pressure
