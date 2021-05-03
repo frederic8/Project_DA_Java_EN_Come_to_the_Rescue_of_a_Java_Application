@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
-
+import java.util.TreeMap;
 
 public class AnalyticsCounter {
 
@@ -10,9 +10,14 @@ public class AnalyticsCounter {
 		ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile("Project02Eclipse/symptoms.txt");
 		List<String> symptoms = readSymptomDataFromFile.getSymptoms();
 
+		System.out.println(" ");
 
-		}
+		// Count symptoms from File
+		CountSymptoms countSymptoms = new CountSymptoms();
+		TreeMap<String, Integer> map = countSymptoms.count(symptoms);
+
+
+	}
+
 }
-
-
 
