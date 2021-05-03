@@ -41,4 +41,4 @@ public class CountSymptoms implements CountSymptom {
         //Retourne la TreeMap
         return resultsMap;
     }
-}
+    }
