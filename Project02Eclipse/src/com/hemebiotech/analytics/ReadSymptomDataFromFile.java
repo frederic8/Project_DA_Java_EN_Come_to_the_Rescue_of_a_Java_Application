@@ -1,65 +1,52 @@
 package com.hemebiotech.analytics;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-// Creer Class "ReadSymptomDataFromFile"  et implementer l'interface "ISymptomReader"
+/**
+ * Simple brute force implementation
+ */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	// Créer attribut
-	private final String filepath;
+    /**
+     * @param filepath a full or partial path to file with symptom strings in it, one per line
+     */
+    private final String filepath;
 
-	//Constructeur
-	public ReadSymptomDataFromFile (String filepath) {
+    public ReadSymptomDataFromFile (String filepath) {
+        this.filepath = filepath;
+    }
 
-		this.filepath = filepath;
-	}
+    @Override
+    public List<String> getSymptoms() throws IOException{
 
-	//Methode
-	@Override
-	public List<String> getSymptoms() {
+        ArrayList<String> result = new ArrayList<String>();
 
-		//Créer Arraylist de type String nommé "result" egale à une nouvelle instance de type Arraylist
-		//qui liste les elements que contient le document "symptoms.txt"
-		ArrayList<String> result = new ArrayList<String>();
+        if (filepath != null) {
 
-		//Créer boucle pour lire le fichier ligne par ligne
-		if (filepath != null) {
+            try {
+                BufferedReader reader = new BufferedReader(new FileReader(filepath));
 
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(filepath));
+                String line = reader.readLine();
 
-				String line = reader.readLine();
+                while (line != null) {
+                    result.add(line);
 
-				while (line != null) {
-					result.add(line);
+                    System.out.println("Symptom : " + line);
 
-					//Afficher le contenu de la liste les "Symptomes" sur la console.
-					System.out.println("Symptom : " + line);
+                    line = reader.readLine();
 
-					line = reader.readLine();
+                }
+                reader.close();
 
-				}
-				//Fremer la lecture
-				reader.close();
+            } catch (IOException e) {
+                System.out.println("An error occurred : ");
+                e.printStackTrace();
+            }
+        }
+        return result;
 
-		  //Attraper les exceptions (erreurs) si il y en a.
-		} catch (IOException e) {
-
-			//Afficher la phrase suivante : " Une erreur s'est produite : " sur la console
-			System.out.println("An error occurred : ");
-
-			//Afficher les exceptions (erreurs) sur la console
-			e.printStackTrace();
-		}
-		}
-		//Retourne la liste
-		return result;
-
-	}
+    }
 }
-
