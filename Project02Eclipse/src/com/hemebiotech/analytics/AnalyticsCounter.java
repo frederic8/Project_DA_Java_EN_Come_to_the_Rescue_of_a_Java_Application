@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 
 public class AnalyticsCounter {
@@ -18,8 +19,8 @@ public class AnalyticsCounter {
 
 		System.out.println(" ");
 
-		}
+		// Generate Symptoms output File from Map
+		WriterMapToDataFile writerMapToDataFile = new WriterMapToDataFile(map);
+		Map.Entry<String, Integer> entry = writerMapToDataFile.writeFile("Project02Eclipse/result.out");
+	}
 }
-
-
-
