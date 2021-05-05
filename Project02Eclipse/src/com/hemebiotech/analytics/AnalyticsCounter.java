@@ -1,6 +1,7 @@
 package com.hemebiotech.analytics;
 
 import java.util.List;
+import java.util.TreeMap;
 
 public class AnalyticsCounter {
 
@@ -11,6 +12,11 @@ public class AnalyticsCounter {
 
 		System.out.println(" ");
 
+		// Count symptoms from File
+		CountSymptom countSymptom = new CountSymptom();
+		TreeMap<String, Integer> map = countSymptom.count(symptoms);
+
+		System.out.println(" ");
 
 		}
 }
